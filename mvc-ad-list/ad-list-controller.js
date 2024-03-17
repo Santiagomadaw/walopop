@@ -6,7 +6,6 @@ export async function adListController(adList) {
     try {
         const ads = await getAds()
         if (ads.length > 0) {
-            console.log('hola')
             renderAds(ads, adList)
         } else {
             renderNoAds(adList)
@@ -19,12 +18,8 @@ export async function adListController(adList) {
 
 
 function renderAds(ads, adList) {
-    console.log(ads.length)
-    console.log(adList)
     ads.forEach((ad) => {
-        console.log(ad)
         const targetAd = document.createElement('div');
-        console.log(buildAd(ad))
         targetAd.innerHTML = buildAd(ad);
         adList.appendChild(targetAd)
     })

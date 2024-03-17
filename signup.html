@@ -1,18 +1,31 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./ad-list/ad-list-style.css">
+    <title>Document</title>
     <link rel="stylesheet" href="./sytles/main.css">
     <link rel="stylesheet" href="./sytles/normalize.css">
+    <link rel="stylesheet" href="mvc-signup/signup-style.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Grandstander:ital@0;1&family=Lobster&family=Outfit:wght@100..900&family=Vina+Sans&display=swap" rel="stylesheet"><title>welepop</title>
+
 </head>
 <header class="header"> <h1><span>w</span>allipop</h1> </header>
+
 <body>
-    <section class="ad-list"></section>
-    <script type="module" src="controller-hubs/index-hub.js"></script>
+    
+    <form id="signup-form">
+        <label for="email">Email:</label>
+        <input type="text" name="email" id="email">
+        <label for="pass">Password:</label>
+        <input type="password" name="pass" id="pass">
+        <label for="passConfirmation">Repetir password:</label>
+        <input type="password" name="passConfirmation" id="passConfirmation">
+        <button type="submit">Registrar</button>
+    </form>
+    <script type="module" src="controller-hubs/signup-hub.js"></script>
 </body>
 </html>

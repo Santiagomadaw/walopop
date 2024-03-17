@@ -23,6 +23,14 @@
         
     }
 }
+.no-ad{
+    color: silver;
+    text-wrap: nowrap;
+    text-align: start;
+}
+.ad-list:has(.no-ad){
+    display: flex;
+}
 .single-ad:hover{
     transform: translate(0, -5px);
 }

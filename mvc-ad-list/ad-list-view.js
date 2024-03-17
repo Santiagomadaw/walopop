@@ -9,3 +9,11 @@ export function buildAd(ad) {
     </a>
     `
 }
+
+export function buildNoAd() {
+    return `
+    <div class="no-ad">
+            <h1>No se han encontrado anuncios</h1>
+        </div> 
+    `
+}

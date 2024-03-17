@@ -1,4 +1,5 @@
 import { loaderController } from "../mvc-loader/loader-controller.js";
+import { sendEvent } from "../utils/eventDispatcher.js";
 import { createUser } from "./signup-model.js";
 
 export function signupController(signupForm) {
@@ -13,7 +14,10 @@ export function signupController(signupForm) {
             ? errors.push('Las contraseñas no coinciden')
             : ''
         errors.length>0 
-            ? errors.forEach(error=> alert(error)) 
+            ? errors.forEach(error=> sendEvent('formError',
+                                                {message:error,
+                                                type:'error'},
+                                                signupForm) ) 
             : newUser(formData,signupForm)
     })
 }
@@ -24,7 +28,10 @@ async function newUser(data, node){
         showLoader()
         await createUser(data)
     } catch (error) {
-        alert(error)
+        sendEvent('formError',
+                {message:error,
+                type:'error'},
+                node)
     }finally{
         hideLoader()
     }

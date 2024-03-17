@@ -1,6 +1,7 @@
 import { loaderController } from "../mvc-loader/loader-controller.js";
+import { sendEvent } from "../utils/eventDispatcher.js";
 import { getAds } from "./ad-list-model.js";
-import { buildAd } from "./ad-list-view.js";
+import { buildAd, buildNoAd } from "./ad-list-view.js";
 
 
 export async function adListController(adList) {
@@ -14,7 +15,10 @@ export async function adListController(adList) {
             renderNoAds(adList)
         }
     } catch (error) {
-
+        sendEvent('adLoaderError', {message:error, type:'error'}, adList)
+        setTimeout(() => {
+            renderNoAds(adList)
+        }, 4000);
     }finally{
         hideLoader()
     }
@@ -31,5 +35,5 @@ function renderAds(ads, adList) {
 }
 
 function renderNoAds(adList) {
-    adList.innerHTML = buildNoAds();
+    adList.innerHTML = buildNoAd();
 }

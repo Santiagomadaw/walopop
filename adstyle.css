@@ -1,0 +1,36 @@
+.ad-list{
+    --col: 5;
+    margin: auto;
+    width: 80%;
+    display: grid;
+    
+    justify-content: center;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, 235px);
+}
+.single-ad{
+    display: flex;
+    flex-direction: column;
+    width: 225px;
+    height: 350px;
+    gap: 8px;
+    transition: .09s;
+    & img{
+        border-radius: 20px;
+        width: 225px;
+        height: 270px;
+        object-fit: cover;
+        
+    }
+}
+.single-ad:hover{
+    transform: translate(0, -5px);
+}
+.item {
+    margin: 0;
+    color: grey;
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

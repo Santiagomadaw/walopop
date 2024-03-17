@@ -1,3 +1,4 @@
+import { loaderController } from "../mvc-loader/loader-controller.js";
 import { createUser } from "./signup-model.js";
 
 export function signupController(signupForm) {
@@ -13,10 +14,21 @@ export function signupController(signupForm) {
             : ''
         errors.length>0 
             ? errors.forEach(error=> alert(error)) 
-            : createUser(formData)
+            : newUser(formData,signupForm)
     })
 }
+async function newUser(data, node){
+    const { showLoader, hideLoader } = loaderController(node)
 
+    try {
+        showLoader()
+        await createUser(data)
+    } catch (error) {
+        alert(error)
+    }finally{
+        hideLoader()
+    }
+}
 const dataExtract =(signupForm)=>{
     const formData = new FormData(signupForm)
     let data = {}

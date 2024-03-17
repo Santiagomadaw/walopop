@@ -1,9 +1,12 @@
+import { loaderController } from "../mvc-loader/loader-controller.js";
 import { getAds } from "./ad-list-model.js";
 import { buildAd } from "./ad-list-view.js";
 
 
 export async function adListController(adList) {
+    const { showLoader, hideLoader } = loaderController(adList)
     try {
+        showLoader()
         const ads = await getAds()
         if (ads.length > 0) {
             renderAds(ads, adList)
@@ -12,6 +15,8 @@ export async function adListController(adList) {
         }
     } catch (error) {
 
+    }finally{
+        hideLoader()
     }
 }
 

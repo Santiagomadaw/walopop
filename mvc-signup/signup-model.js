@@ -14,7 +14,7 @@ export async function createUser(data) {
 
 const parseUser = (data)=>{
     return{
-        username : data.email,
+        username: data.email,
         password: data.pass
     }
 }

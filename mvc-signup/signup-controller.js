@@ -14,7 +14,7 @@ export function signupController(signupForm) {
             ? errors.push('Las contraseñas no coinciden')
             : ''
         errors.length>0 
-            ? errors.forEach(error=> sendEvent('formError',
+            ? errors.forEach(error=> sendEvent('formEvent',
                                                 {message:error,
                                                 type:'error'},
                                                 signupForm) ) 
@@ -27,8 +27,15 @@ async function newUser(data, node){
     try {
         showLoader()
         await createUser(data)
+        sendEvent('formEvent',
+                {message:'Usuario creado',
+                type:'success'},
+                node)
+        setTimeout(() => {
+            window.location.href = 'index.html'
+        }, 1200);
     } catch (error) {
-        sendEvent('formError',
+        sendEvent('formEvent',
                 {message:error,
                 type:'error'},
                 node)

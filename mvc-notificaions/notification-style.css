@@ -4,9 +4,17 @@
     border: 2px solid #13C1AC;
     border-radius: 5px;
     padding: 10px;
+    width: 100%;
     text-wrap: nowrap;
+    text-align: center;
     &.error{
         border-color: red;
         background-color: coral;
+    
+    }
+    &.success{
+        border-color: green;
+        background-color: greenyellow;
+    
     }
 }

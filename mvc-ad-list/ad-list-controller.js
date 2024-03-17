@@ -25,7 +25,6 @@ export async function adListController(adList) {
 }
 
 
-
 function renderAds(ads, adList) {
     ads.forEach((ad) => {
         const targetAd = document.createElement('div');

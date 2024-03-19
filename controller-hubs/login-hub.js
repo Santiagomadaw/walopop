@@ -1,14 +1,16 @@
 import { headerController } from "../mvc-header/header-controller.js";
+import { loginController } from "../mvc-login/login-controller.js";
 import { notificationController } from "../mvc-notificaions/notifications-controller.js";
-import { signupController } from "../mvc-signup/signup-controller.js";
 
-const signupForm = document.querySelector('#signup-form')
-signupForm.addEventListener('formEvent', (event) => {
-    notificationController(signupForm,event.detail)
+const loginForm = document.querySelector('#login-form')
+
+loginForm.addEventListener('formEvent', (event) => {
+    notificationController(loginForm,event.detail)
     event.stopPropagation();
 })
-signupController(signupForm)
+loginController(loginForm)
 
 
 const buttonsContiner = document.querySelector('.navContainer')
 headerController(buttonsContiner)
+

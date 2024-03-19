@@ -1,0 +1,10 @@
+#login-form{
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    height: 100%;
+    width: 400px;
+    & .signUpButton{
+        margin-top: 1rem;
+    }
+}

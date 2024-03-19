@@ -19,13 +19,15 @@
     
     <header class="header"> <h1><span>w</span>allopop</h1> <nav class="navContainer"></nav></header>
     <form id="signup-form">
-        <label for="email">Email:</label>
-        <input type="text" name="email" id="email">
-        <label for="pass">Password:</label>
-        <input type="password" name="pass" id="pass">
-        <label for="passConfirmation">Repetir password:</label>
-        <input type="password" name="passConfirmation" id="passConfirmation">   
-        <button type="submit" class="signUpButton">Registrar</button>
+        <label for="name">Articulo:</label>
+        <input type="text" name="name" id="name">
+        <label for="price">price:</label>
+        <input type="number" name="price" id="price">
+        <label for="url">Url foto:</label>
+        <input type="url" name="url" id="url">
+        <label for="tags">Etiquetas:</label>
+        <input type="tags" name="tags" id="tags">   
+        <button type="submit" class="newAdButton">Crear anuncio</button>
     </form>
     <script type="module" src="controller-hubs/signup-hub.js"></script>
 </body>

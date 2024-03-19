@@ -3,51 +3,57 @@ import { sendEvent } from "../utils/eventDispatcher.js";
 import { createUser } from "./signup-model.js";
 
 export function signupController(signupForm) {
-    signupForm.addEventListener('submit', (event)=>{
+    signupForm.addEventListener('submit', (event) => {
         event.preventDefault();
         const formData = dataExtract(signupForm)
         let errors = []
-        !mailValidate(formData.email) 
+        !mailValidate(formData.email)
             ? errors.push('Formato de email no valido')
             : ''
-        !passValidate(formData) 
+        !passValidate(formData)
             ? errors.push('Las contraseñas no coinciden')
             : ''
-        errors.length>0 
-            ? errors.forEach(error=> sendEvent('formEvent',
-                                                {message:error,
-                                                type:'error'},
-                                                signupForm) ) 
-            : newUser(formData,signupForm)
+        errors.length > 0
+            ? errors.forEach(error =>
+                sendEvent('formEvent',
+                    {
+                        message: error,
+                        type: 'error'
+                    },
+                    signupForm))
+            : newUser(formData, signupForm)
     })
 }
-async function newUser(data, node){
+async function newUser(data, node) {
     const { showLoader, hideLoader } = loaderController(node)
-
     try {
         showLoader()
         await createUser(data)
         sendEvent('formEvent',
-                {message:'Usuario creado',
-                type:'success'},
-                node)
+            {
+                message: 'Usuario creado',
+                type: 'success'
+            },
+            node)
         setTimeout(() => {
             window.location.href = 'index.html'
         }, 1200);
     } catch (error) {
         sendEvent('formEvent',
-                {message:error,
-                type:'error'},
-                node)
-    }finally{
+            {
+                message: error,
+                type: 'error'
+            },
+            node)
+    } finally {
         hideLoader()
     }
 }
-const dataExtract =(signupForm)=>{
+const dataExtract = (signupForm) => {
     const formData = new FormData(signupForm)
     let data = {}
-    formData.forEach((value,key) => data[key] = value)
-    return data 
+    formData.forEach((value, key) => data[key] = value)
+    return data
 }
 
 const mailValidate = (email) => {

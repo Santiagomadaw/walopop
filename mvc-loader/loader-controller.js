@@ -1,7 +1,6 @@
 import { buildLoader } from "./loader-view.js"
 
 export function loaderController(node){
-    const body = document.body
     const spinner = document.createElement('div')
     spinner.classList = 'loaderContiner'
     const showLoader = () => {

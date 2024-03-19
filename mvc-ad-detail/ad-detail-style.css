@@ -1,0 +1,38 @@
+body{
+    display: flex;
+    justify-content: center;
+    background-color: #eceff1;
+
+}
+
+
+.ad-detail{
+    display: flex;
+    flex-direction: column;
+    width: 680px;
+    background-color: white;
+    padding: 40px 10px;
+    border-radius: 10px;
+
+
+}
+.img-container{
+    margin: 20px 10px;
+    display: flex;
+    width: 640px;
+    height: 480px;
+    border-radius: 10px;
+    align-items: center;
+    overflow: hidden;
+    & img {
+        width: auto;
+        height: auto;
+        max-width: none; 
+        max-height: none;
+        min-width: 100%; 
+        min-height: 100%;
+        object-fit: cover;
+        
+    }
+}
+

@@ -6,7 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./sytles/main.css">
     <link rel="stylesheet" href="./sytles/normalize.css">
-    <link rel="stylesheet" href="./mvc-signup/signup-style.css">
+    <link rel="stylesheet" href="./mvc-newad/newad-style.css">
     <link rel="stylesheet" href="./mvc-loader/loader-stylle.css">
     <link rel="stylesheet" href="./mvc-notificaions/notification-style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,17 +18,28 @@
 <body>
     
     <header class="header"> <h1><span>w</span>allopop</h1> <nav class="navContainer"></nav></header>
-    <form id="signup-form">
+    <form id="new-ad-form">
         <label for="name">Articulo:</label>
-        <input type="text" name="name" id="name">
+        <input type="text" name="name" id="name" required>
         <label for="price">price:</label>
-        <input type="number" name="price" id="price">
-        <label for="url">Url foto:</label>
-        <input type="url" name="url" id="url">
+        <input type="number" name="price" id="price" required>
+        <label for="photo">Url foto:</label>
+        <input type="text" name="photo" id="photo">
         <label for="tags">Etiquetas:</label>
-        <input type="tags" name="tags" id="tags">   
+        <input type="tags" name="tags" id="tags"required>
+        <label for="tags">Descripcion:</label>
+        <input type="text" name="description" id="description" required> 
+        <div class="switch-continer">
+            <h3>Venta</h3>
+            <label class="switch">
+                <input type="checkbox" name="buysell" id="buysell">
+                <span class="slider round"></span>
+            </label> 
+            <h3>Compra</h3>
+        </div>
         <button type="submit" class="newAdButton">Crear anuncio</button>
+        <button type="button" class="backButton">Volver</button>
     </form>
-    <script type="module" src="controller-hubs/signup-hub.js"></script>
+    <script type="module" src="controller-hubs/newad-hub.js"></script>
 </body>
 </html>

@@ -5,6 +5,8 @@ export function buildAd(ad) {
             <img src="${ad.photo}" alt="">
             <strong class="">${ad.price} €</strong>
             <p class="item">${ad.name}</p>
+            <p class="buysell">${ad.buysell}</p>
+            <p class="description">${ad.description}</p>
         </div> 
     </a>
     `

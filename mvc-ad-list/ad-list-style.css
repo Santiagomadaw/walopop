@@ -1,5 +1,4 @@
 .ad-list{
-    --col: 5;
     margin: auto;
     width: 80%;
     display: grid;
@@ -12,7 +11,7 @@
     display: flex;
     flex-direction: column;
     width: 225px;
-    height: 350px;
+    height: 400px;
     gap: 8px;
     transition: .09s;
     & img{
@@ -41,4 +40,15 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+.description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Número de líneas a mostrar */
+    -webkit-box-orient: vertical;
+    
+}
+p{
+    margin: 0;
 }

@@ -10,6 +10,7 @@
                 "work",
                 "lifestyle"
             ],
+            "buysell": "sell",
             "description": "Increíble oportunidad para adquirir esta joya vintage: la cámara clásica Nikon F3. Perfecta para aquellos que buscan capturar momentos únicos con estilo y elegancia. Con su diseño icónico y su durabilidad, esta cámara es una compañera fiel en cualquier aventura fotográfica. Estado: bueno."
         },
         {
@@ -21,6 +22,7 @@
             "tags": [
                 "lifestyle"
             ],
+            "buysell": "buy",
             "description": "Descubre esta obra maestra del pensamiento profundo, perfecta para aquellos que buscan un toque de reflexión en su vida diaria. Con su estilo único y su profundidad conceptual, esta pieza es ideal para decorar cualquier espacio con elegancia y significado. Estado: aceptable."
         },
         {
@@ -33,6 +35,7 @@
                 "mobile",
                 "lifestyle"
             ],
+            "buysell": "sell",
             "description": "¡Clásico Nokia 3310 disponible para los nostálgicos! Con su diseño resistente y su batería de larga duración, este teléfono es perfecto como pieza de colección o como dispositivo secundario. Revive la era pre-smartphone con este icono de la telefonía móvil. Estado: para piezas."
         },
         {
@@ -45,6 +48,7 @@
                 "motor",
                 "lifestyle"
             ],
+            "buysell": "buy",
             "description": "¡Adquiere esta legendaria Harley-Davidson Sportster y emprende la aventura en la carretera! Con su estilo vintage y su potente motor, esta moto es perfecta para aquellos que buscan libertad y emoción sobre dos ruedas. Ideal para coleccionistas y amantes de las motos clásicas. Estado: bueno."
         },
         {
@@ -56,6 +60,7 @@
             "tags": [
                 "lifestyle"
             ],
+            "buysell": "sell",
             "description": "¡Revive la nostalgia de los videojuegos con esta consola clásica Nintendo (NES)! Perfecta para aquellos que quieren disfrutar de los mejores juegos retro. Con su diseño icónico y su amplio catálogo de títulos, garantiza diversión para toda la familia. Estado: bueno."
         },
         {
@@ -68,6 +73,7 @@
                 "motor",
                 "lifestyle"
             ],
+            "buysell": "buy",
             "description": "¡Hazte con este emblemático Volkswagen Beetle y destaca en la carretera! Con su estilo retro y su fiabilidad, este coche clásico es perfecto para aquellos que buscan un toque de nostalgia en sus viajes. Ideal para coleccionistas y amantes de los coches vintage. Estado: bueno."
         },
         {
@@ -79,6 +85,7 @@
             "tags": [
                 "lifestyle"
             ],
+            "buysell": "sell",
             "description": "¡Clásico juego Super Mario Bros disponible para los amantes de la nostalgia! Sumérgete en el mundo de Mario y rescata a la princesa Peach en esta aventura llena de diversión. Perfecto para revivir los momentos de la infancia y disfrutar de la magia de los videojuegos retro. Estado: bueno."
         },
         {
@@ -91,6 +98,7 @@
                 "work",
                 "lifestyle"
             ],
+            "buysell": "sell",
             "description": "¡No te pierdas esta oportunidad de poseer la icónica cámara Leica M3! Conocida por su calidad y su precisión, esta cámara es perfecta para capturar momentos únicos con elegancia. Ideal para profesionales y aficionados que buscan lo mejor en fotografía. Estado: bueno."
         },
         {
@@ -103,6 +111,7 @@
                 "motor",
                 "lifestyle"
             ],
+            "buysell": "sell",
             "description": "¡Hazte con esta legendaria Honda CB750 y domina la carretera con estilo! Con su diseño clásico y su rendimiento excepcional, esta moto es perfecta para aquellos que buscan aventuras sobre dos ruedas. Ideal para coleccionistas y amantes de las motos vintage. Estado: bueno."
         },
         {
@@ -115,6 +124,7 @@
                 "mobile",
                 "lifestyle"
             ],
+            "buysell": "buy",
             "description": "Teléfono móvil Motorola Razr V3 disponible. Diseñado para aquellos que buscan un dispositivo elegante y funcional para su vida diaria. Con su diseño delgado y su pantalla externa, ofrece una experiencia de comunicación sofisticada. Ideal como teléfono secundario o para aquellos que valoran el estilo retro. Estado: para piezas."
         },
         {
@@ -126,6 +136,7 @@
             "tags": [
                 "lifestyle"
             ],
+            "buysell": "sell",
             "description": "¡Disfruta de la nostalgia con esta consola clásica Atari 2600! Perfecta para aquellos que quieren revivir la época dorada de los videojuegos. Con su amplio catálogo de juegos retro, garantiza horas de entretenimiento para toda la familia. Estado: bueno."
         },
         {
@@ -138,6 +149,7 @@
                 "motor",
                 "lifestyle"
             ],
+            "buysell": "sell",
             "description": "¡Adquiere este impresionante Chevrolet Camaro y destaca en cualquier carretera! Con su potente motor y su diseño atemporal, este coche clásico es una verdadera obra maestra del automovilismo. Ideal para coleccionistas o para aquellos que buscan un toque de estilo retro en sus paseos. Estado: para restaurar."
         },
         {
@@ -149,6 +161,7 @@
             "tags": [
                 "lifestyle"
             ],
+            "buysell": "sell",
             "description": "¡Revive la diversión de los arcades con este clásico juego Pac-Man para PlayStation 1! Perfecto para aquellos que quieren disfrutar de horas de entretenimiento retro en su consola. Atrévete a superar los laberintos y come todos los puntos para ganar. Estado: bueno."
         },
         {
@@ -161,6 +174,7 @@
                 "work",
                 "lifestyle"
             ],
+            "buysell": "buy",
             "description": "¡No te pierdas esta oportunidad de poseer una cámara clásica Canon AE-1! Conocida por su fiabilidad y su facilidad de uso, esta cámara es perfecta tanto para profesionales como para aficionados. Captura momentos únicos con su calidad de imagen excepcional y su diseño icónico. Estado: bueno."
         },
         {
@@ -173,6 +187,7 @@
                 "mobile",
                 "work"
             ],
+            "buysell": "buy",
             "description": "Teléfono móvil BlackBerry Curve 8520 disponible. Diseñado para profesionales que buscan un dispositivo confiable para su trabajo diario. Con su teclado físico y su plataforma segura, ofrece una experiencia de comunicación eficiente. Ideal para aquellos que valoran la productividad en movimiento. Estado: para piezas."
         },
         {
@@ -185,6 +200,7 @@
                 "motor",
                 "lifestyle"
             ],
+            "buysell": "sell",
             "description": "¡Disfruta de la auténtica experiencia retro con esta Triumph Bonneville! Con su estilo clásico y su motor potente, esta moto es perfecta para aquellos que buscan aventuras en la carretera con un toque vintage. Ideal para coleccionistas o para quienes quieren destacar en cualquier ruta. Estado: para restaurar."
         },
         {
@@ -196,6 +212,7 @@
             "tags": [
                 "lifestyle"
             ],
+            "buysell": "sell",
             "description": "¡Revive la emoción de los años 90 con esta consola clásica Sega Mega Drive (Genesis)! Perfecta para aquellos que quieren disfrutar de los mejores juegos retro de SEGA. Con su amplio catálogo de títulos y su diseño icónico, garantiza horas de diversión para toda la familia. Estado: bueno."
         },
         {
@@ -207,6 +224,7 @@
             "tags": [
                 "lifestyle"
             ],
+            "buysell": "sell",
             "description": "¡Embárcate en una épica aventura con el juego The Legend of Zelda! Perfecto para aquellos que buscan sumergirse en un mundo de fantasía y acción. Ayuda a Link a salvar a la princesa Zelda y a derrotar al malvado Ganon en este clásico de los videojuegos. Estado: bueno."
         },
         {
@@ -219,6 +237,7 @@
                 "work",
                 "lifestyle"
             ],
+            "buysell": "sell",
             "description": "¡No te pierdas esta oportunidad de tener una cámara clásica Pentax K1000! Conocida por su fiabilidad y su facilidad de uso, es perfecta para fotógrafos de todos los niveles. Captura momentos únicos con su calidad de imagen excepcional y su diseño resistente. Ideal para profesionales y aficionados por igual. Estado: bueno."
         },
         {
@@ -231,6 +250,7 @@
                 "mobile",
                 "lifestyle"
             ],
+            "buysell": "buy",
             "description": "Teléfono móvil Sony Ericsson T10s disponible. Diseñado para aquellos que buscan un dispositivo compacto y confiable para su vida diaria. Con su diseño elegante y su interfaz intuitiva, ofrece una experiencia de comunicación sin complicaciones. Ideal como teléfono secundario o para aquellos que prefieren lo simple. Estado: para piezas."
         },
         {
@@ -242,6 +262,7 @@
             "tags": [
                 "lifestyle"
             ],
+            "buysell": "sell",
             "description": "¡Revive la magia de los 90 con esta consola clásica Super Nintendo (SNES)! Perfecta para aquellos que quieren disfrutar de los mejores juegos retro de Nintendo. Con su innovador controlador y su impresionante catálogo de títulos, garantiza diversión para todas las edades. Estado: bueno."
         },
         {
@@ -253,6 +274,7 @@
             "tags": [
                 "lifestyle"
             ],
+            "buysell": "sell",
             "description": "¡Clásico juego Tetris disponible para desafiar tu habilidad y tu mente! Perfecto para aquellos que buscan un desafío divertido y adictivo. Ordena los bloques y completa líneas para acumular puntos en este juego atemporal. Estado: bueno."
         },
         {
@@ -265,6 +287,7 @@
                 "work",
                 "lifestyle"
             ],
+            "buysell": "sell",
             "description": "¡No te pierdas esta oportunidad de tener una cámara clásica Minolta X-700! Con su avanzada tecnología y su diseño elegante, es perfecta para fotógrafos exigentes. Captura imágenes impresionantes con su calidad de imagen excepcional y su facilidad de uso. Ideal para profesionales y aficionados por igual. Estado: bueno."
         },
         {
@@ -277,6 +300,7 @@
                 "mobile",
                 "work"
             ],
+            "buysell": "sell",
             "description": "Teléfono móvil clásico Siemens S55 disponible. Diseñado para profesionales que buscan un dispositivo compacto y funcional para su vida laboral. Con su interfaz intuitiva y su durabilidad, garantiza una comunicación eficiente en todo momento. Ideal como teléfono secundario o para aquellos que valoran la simplicidad. Estado: para piezas."
         },
         {
@@ -288,6 +312,7 @@
             "tags": [
                 "lifestyle"
             ],
+            "buysell": "sell",
             "description": "¡Revive la emoción de los 90 con esta consola clásica PlayStation 1 (PS1)! Perfecta para aquellos que quieren disfrutar de los mejores juegos retro de Sony. Con su impresionante catálogo de títulos y su diseño icónico, garantiza horas de diversión para toda la familia. Estado: bueno."
         },
         {
@@ -299,6 +324,7 @@
             "tags": [
                 "lifestyle"
             ],
+            "buysell": "sell",
             "description": "¡Acelera con el juego Sonic the Hedgehog para Mega Drive! Perfecto para aquellos que quieren experimentar la velocidad y la emoción de Sonic en su consola retro. Recorre coloridos mundos y derrota al malvado Dr. Robotnik en esta aventura clásica. Estado: bueno."
         }
     ],

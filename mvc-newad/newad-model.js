@@ -19,6 +19,7 @@ export async function createAd(data) {
             const datares = await response.json()
             throw new Error(datares.message);
         }
+        return response
     } catch (error) {
         if (error.message) {
             throw new Error ('No se pudo crear el anuncio')

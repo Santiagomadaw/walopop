@@ -1,4 +1,3 @@
-import { loaderController } from "../mvc-loader/loader-controller.js"
 import { sendEvent } from "../utils/eventDispatcher.js";
 import { loginUser } from "./login-model.js";
 
@@ -11,9 +10,8 @@ export const loginController = (loginFormNode) => {
     })
 }
 const submitForm = async (data, node) => {
-    const { showLoader, hideLoader } = loaderController(node)
     try {
-        showLoader()
+        sendEvent('spinnerOn',{},node)
         const jsonWebTokken = await loginUser(data)
         localStorage.setItem('token', jsonWebTokken)
         sendEvent('formEvent',
@@ -22,8 +20,9 @@ const submitForm = async (data, node) => {
                 type: 'success'
             },
             node)
+            
             setTimeout(() => {
-                window.location.href = 'index.html'
+                window.history.back()
             }, 1200);
     } catch (error) {
         sendEvent('formEvent',
@@ -33,7 +32,8 @@ const submitForm = async (data, node) => {
             },
             node)
     } finally {
-        hideLoader()
+        sendEvent('spinnerOff',{},node)
+
     }
 }
 

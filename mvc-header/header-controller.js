@@ -5,7 +5,6 @@ export const headerController = (navContainer) => {
         navContainer.innerHTML = buildLoginButtons()
         const logoutButton = navContainer.querySelector('#logout')
         const newAdButton = navContainer.querySelector('#newAd')
-        console.log(navContainer)
         newAdButton.addEventListener('click', () => {
             window.location.href = 'newad.html'
         })

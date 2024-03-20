@@ -1,14 +1,13 @@
+import { sendEvent } from "../utils/eventDispatcher.js";
 import { createAd } from "./newad-model.js";
 
 export const newAdController = (newAdForm) => {
     
     goBackButton(newAdForm)
     
-    console.log(newAdForm)
     newAdForm.addEventListener('submit', async (event) => {
         event.preventDefault();
         const formData = new FormData (newAdForm)
-        console.log(formData)
         let dataObj = {}
         formData.forEach((value,key) => {
             dataObj[key]=value
@@ -22,14 +21,29 @@ export const newAdController = (newAdForm) => {
             dataObj['buysell']='Compra'
 
         }
-        console.log('url',dataObj)
         try {
-            await createAd(dataObj)
-            /* setTimeout(() => {
-                window.location = "index.html";
-            }, 1200) */
+            sendEvent('spinnerOn',{},newAdForm)
+            const response = await createAd(dataObj)
+            const data = await response.json()
+            sendEvent('formEvent',
+                        {
+                            message:'Anuncio creado',
+                            type:'success'
+                        },
+                        newAdForm)
+            
+            setTimeout(() => {
+                window.location = `ad-detail.html?id=${data.id}`;
+            }, 1200)
         } catch (error) {
-            alert(error)
+            sendEvent('formEvent',
+                        {
+                            message:error.message,
+                            type:'error'
+                        },
+                        newAdForm)
+        }finally{
+            sendEvent('spinnerOff',{},newAdForm)
         }
     })
 }

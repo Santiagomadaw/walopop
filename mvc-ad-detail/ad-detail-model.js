@@ -1,12 +1,20 @@
 export async function getAdDetail(adId) {
     const url = `http://localhost:8000/api/ads/${adId}`
-    let data
     try {
         const response = await fetch(url);
-        data = await response.json();
-        return data
+        if (response.ok){
+        const data = await response.json();
+        const ad = parseAd(data)
+        
+        return ad
+        }else{
+            throw new Error('No se encuentra el anuncio')
+        }
     } catch (error) {
-        throw new Error('Error obteniendo tweet')
+        if (error.message){
+            
+        }
+        throw new Error('Error accediendo al base de datos')
     }
 
 }
@@ -20,7 +28,8 @@ export async function getUser(token) {
             }
         });
         const data = await response.json();
-        return data.id
+        const user = parseUser(data)
+        return user.userId
     } catch (error) {
         throw new Error('Error datos del usuario')
     }
@@ -40,7 +49,25 @@ export async function removeAd(id, token) {
             throw new Error(data.message);
         }
     } catch (error) {
-        throw new Error('Error eliminado anuncio')
+        throw new Error(error.message)
     }
 
+}
+
+const parseAd = (data) =>{
+    return{
+        id: data.id,
+        name: data.name,
+        userId: data.userId,
+        price: data.price,
+        photo: data.photo,
+        tags: data.tags,
+        buysell: data.buysell,
+        description: data.description
+    }
+}
+const parseUser = (data) => {
+    return{
+        userId: data.id
+    }
 }

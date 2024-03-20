@@ -1,13 +1,12 @@
-import { loaderController } from "../mvc-loader/loader-controller.js";
 import { sendEvent } from "../utils/eventDispatcher.js";
 import { getAds } from "./ad-list-model.js";
 import { buildAd, buildNoAd } from "./ad-list-view.js";
 
 
 export async function adListController(adList) {
-    const { showLoader, hideLoader } = loaderController(adList)
+    
     try {
-        showLoader()
+        sendEvent('spinnerOn',{},adList)
         const ads = await getAds()
         if (ads.length > 0) {
             renderAds(ads, adList)
@@ -20,7 +19,7 @@ export async function adListController(adList) {
             renderNoAds(adList)
         }, 4000);
     }finally{
-        hideLoader()
+        sendEvent('spinnerOff',{},adList)
     }
 }
 

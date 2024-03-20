@@ -1,4 +1,3 @@
-import { loaderController } from "../mvc-loader/loader-controller.js";
 import { sendEvent } from "../utils/eventDispatcher.js";
 import { createUser } from "./signup-model.js";
 
@@ -25,9 +24,8 @@ export function signupController(signupForm) {
     })
 }
 async function newUser(data, node) {
-    const { showLoader, hideLoader } = loaderController(node)
     try {
-        showLoader()
+        sendEvent('spinnerOn',{},node)
         await createUser(data)
         sendEvent('formEvent',
             {
@@ -36,17 +34,18 @@ async function newUser(data, node) {
             },
             node)
         setTimeout(() => {
-            window.location.href = 'index.html'
+            window.history.back()
         }, 1200);
     } catch (error) {
         sendEvent('formEvent',
             {
-                message: error,
+                
+                message: error.message,
                 type: 'error'
             },
             node)
     } finally {
-        hideLoader()
+        sendEvent('spinnerOff',{},node)
     }
 }
 const dataExtract = (signupForm) => {

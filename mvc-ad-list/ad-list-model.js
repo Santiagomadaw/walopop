@@ -1,5 +1,5 @@
-export async function getAds(){
-    const url = 'http://localhost:8000/api/ads'
+export async function getAds(page){
+    const url = `http://localhost:8000/api/ads?_page=${page}`
     let ads = []
     try {
         const response =await fetch(url)

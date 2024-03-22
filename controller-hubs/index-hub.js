@@ -10,13 +10,15 @@ adListContiner.addEventListener('adLoaderError', (event) => {
     event.stopPropagation();
 })
 adListContiner.addEventListener('spinnerOn', (event) => {
+    console.log('tengo lanzo spinner')
     showLoader()
     event.stopPropagation();
 })
 adListContiner.addEventListener('spinnerOff', (event) => {
+    console.log('tengo lanzo spinner')
     hideLoader()
     event.stopPropagation();
 })
 adListController(adListContiner)
-const buttonsContiner = document.querySelector('.navContainer')
-headerController(buttonsContiner)
+const header = document.querySelector('.header')
+headerController(header)

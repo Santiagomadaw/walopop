@@ -18,5 +18,5 @@ newAdForm.addEventListener('spinnerOff', (event) => {
     event.stopPropagation();
 })
 newAdController(newAdForm)
-const buttonsContiner = document.querySelector('.navContainer')
-headerController(buttonsContiner)
+const header = document.querySelector('.header')
+headerController(header)

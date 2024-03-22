@@ -20,8 +20,8 @@ adDetailNode.addEventListener('spinnerOff', (event) => {
 })
 
 detailController(adDetailNode)
-const buttonsContiner = document.querySelector('.navContainer')
-headerController(buttonsContiner)
+const header = document.querySelector('.header')
+headerController(header)
 
 
 

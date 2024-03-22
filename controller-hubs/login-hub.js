@@ -21,6 +21,9 @@ loginForm.addEventListener('spinnerOff', (event) => {
 loginController(loginForm)
 
 
-const buttonsContiner = document.querySelector('.navContainer')
-headerController(buttonsContiner)
+const header = document.querySelector('.header')
+headerController(header)
+
+
+
 

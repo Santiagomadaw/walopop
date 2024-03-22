@@ -4,30 +4,35 @@ import { buildAd, buildNoAd } from "./ad-list-view.js";
 
 
 export async function adListController(adListContiner, page = 1) {
-    console.log(page)
+    const params = window.location.href.split('?')
+
     const adList =document.createElement('div')
     adList.classList = 'ad-list'
     adListContiner.appendChild(adList)
     try {
+        console.log('lanzo spinner')
         sendEvent('spinnerOn',{},adListContiner)
         
-        const ads = await getAds(page)
+        const ads = await getAds(page, params[1])
         if (ads.length > 0) {
             renderAds(ads, adList)
+            if(ads.length >= 10){
             const button = document.createElement('button')
             button.classList='more-ads-button'
             button.innerHTML='Mostrar mas anuncios'
             button.addEventListener('click', async ()=>{
                 page = page +1
-                const moreAds = await getAds(page)
+                const moreAds = await getAds(page, params[1])
                 console.log(moreAds)
                 if (moreAds.length > 0){
                     renderAds(moreAds, adList)
-                }else{
+                }
+                if(moreAds.length < 10){
                     button.remove()
                 }
             })
             adListContiner.appendChild(button)
+        }
         } else {
             renderNoAds(adList)
         }
@@ -42,6 +47,7 @@ export async function adListController(adListContiner, page = 1) {
             renderNoAds(adList)
         }, 4000);
     }finally{
+        console.log('paro spinner')
         sendEvent('spinnerOff',{},adListContiner)
     }
 }

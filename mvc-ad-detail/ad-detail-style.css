@@ -35,4 +35,15 @@ body{
         
     }
 }
-
+.tags-container p{
+    margin: 0;
+    padding: 3px 5px;
+    border-radius: 3px;
+    color: white;
+    width:fit-content;
+    background: #13C1AC;
+}
+.tags-container{
+    display: flex;
+    gap: 4px;
+}

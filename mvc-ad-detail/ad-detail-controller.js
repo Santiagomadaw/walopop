@@ -1,6 +1,6 @@
 import { sendEvent } from "../utils/eventDispatcher.js";
 import { getAdDetail, getUser, removeAd } from "./ad-detail-model.js"
-import { buildDetail } from "./ad-detail-view.js"
+import { buildDetail, buildTags } from "./ad-detail-view.js"
 
 
 export async function detailController(adDetailNode) {
@@ -13,13 +13,20 @@ export async function detailController(adDetailNode) {
         const adData = await getAdDetail(id)
         const container = adDetailNode.querySelector('.container');
         container.innerHTML = buildDetail(adData);
+        const tagsContiner = container.querySelector('.tags-container')
+        console.log(tagsContiner)
+        adData.tags.forEach((tag) => {
+            const newTag = document.createElement('p')
+            newTag.innerText = tag
+            tagsContiner.appendChild(newTag)
+        })
         goBackButton(adDetailNode)
         handleRemoveAdButton(adDetailNode, adData)
     } catch (error) {
         sendEvent('detailError',{message:error, type:'error'},adDetailNode)
         setTimeout(() => {
             window.location = "index.html";
-        }, 1200)
+        }, 12200)
     }finally{
         sendEvent('spinnerOff',{},adDetailNode)
     }

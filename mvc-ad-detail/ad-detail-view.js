@@ -4,10 +4,15 @@ export function buildDetail(data){
 </div>
 <h2>${data.price} €</h2>
 <h2>${data.name}</h2>
-<h4>${data.tags}</h4
+<div class="tags-container"></div>
 <h4>${data.buysell}</h4>
 <p>${data.description}</p>
 <button disabled id="removeAdButton">Borrar Anuncio</button>
 <button id="backButton">Volver atrás</button>
 `
+}
+
+export function buildTags(tag){
+    console.log(tag)
+    return `<h4>${tag}</h4>`
 }

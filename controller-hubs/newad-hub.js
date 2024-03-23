@@ -6,16 +6,16 @@ import { notificationController } from "../mvc-notificaions/notifications-contro
 const newAdForm = document.querySelector('.new-ad-contianer')
 const { showLoader, hideLoader } = loaderController(newAdForm)
 newAdForm.addEventListener('newevent', (event) => {
-    notificationController(newAdForm,event.detail)
-    event.stopPropagation();
+    notificationController(newAdForm, event.detail)
+    event.stopPropagation()
 })
 newAdForm.addEventListener('spinnerOn', (event) => {
     showLoader()
-    event.stopPropagation();
+    event.stopPropagation()
 })
 newAdForm.addEventListener('spinnerOff', (event) => {
     hideLoader()
-    event.stopPropagation();
+    event.stopPropagation()
 })
 newAdController(newAdForm)
 const header = document.querySelector('.header')

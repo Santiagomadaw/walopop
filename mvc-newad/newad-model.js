@@ -3,7 +3,7 @@
 export async function createAd(data) {
     const url = "http://localhost:8000/api/ads"
     const token = localStorage.getItem('token')
-    
+
     const ads = parseData(data)
     let response
     try {
@@ -18,17 +18,17 @@ export async function createAd(data) {
         })
         if (!response.ok) {
             const datares = await response.json()
-            throw new Error(datares.message);
+            throw new Error(datares.message)
         }
         return response
     } catch (error) {
         if (error.message) {
-            throw new Error ('No se pudo crear el anuncio')
+            throw new Error('No se pudo crear el anuncio')
         }
     }
 }
-function parseData(data){
-    return{
+function parseData(data) {
+    return {
         name: data.name,
         price: data.price,
         photo: data.photo,

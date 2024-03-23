@@ -15,13 +15,13 @@ export const headerController = async (header) => {
         drawTags(tags, tagSelect)
     } catch (error) {
         handelError(error, header)
-        
+
     }
 
     fillSeachForm(searchItem, tagSelect, optionSelect)
 
     searchBar.addEventListener('submit', (event) => {
-        event.preventDefault();
+        event.preventDefault()
         const searchedItems = new FormData(searchBar)
         const url = urlMaker(searchedItems)
         window.location.href = url
@@ -60,16 +60,16 @@ function drawTags(tags, tagSelect) {
 
 function fillSeachForm(searchItem, tagSelect, optionSelect) {
     const params = new URLSearchParams(window.location.search)
-    const selectedTag = params.get('tags_like');
+    const selectedTag = params.get('tags_like')
     const selectedOption = params.get('buysell_like')
-    const namesArray = params.getAll('name_like');
-    const names = namesArray.join(' ');
+    const namesArray = params.getAll('name_like')
+    const names = namesArray.join(' ')
     searchItem.setAttribute('value', names)
     if (selectedTag) {
         const selected = tagSelect.querySelector(`#${selectedTag}`)
         selected.setAttribute("selected", "")
     }
-    if (selectedOption){
+    if (selectedOption) {
         console.log(selectedOption)
         console.log(optionSelect)
         const selected = optionSelect.querySelector(`#${selectedOption}`)
@@ -81,24 +81,24 @@ function urlMaker(searchedItems) {
     let data = {}
     let url = 'index.html?'
     searchedItems.forEach((value, key) => data[key] = value)
-    
+
     const dataArray = data.search.split(' ')
     dataArray.forEach(item => {
-        if (item){
-            url = url + `name_like=${item}&`;
+        if (item) {
+            url = url + `name_like=${item}&`
         }
-    });
+    })
     if (data.tags) {
         url = url + `tags_like=${data.tags}&`
     }
-    if (data.buysell){
+    if (data.buysell) {
         url = url + `buysell_like=${data.buysell}&`
     }
     url = url.slice(0, -1)
     return url
 }
 
-function loggedInConfig(navContainer,header) {
+function loggedInConfig(navContainer, header) {
     navContainer.innerHTML = buildLoginButtons()
     const logoutButton = navContainer.querySelector('#logout')
     const newAdButton = navContainer.querySelector('#newAd')

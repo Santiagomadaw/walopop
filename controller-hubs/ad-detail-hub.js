@@ -6,17 +6,17 @@ const adDetailNode = document.querySelector('.ad-detail')
 const { showLoader, hideLoader } = loaderController(adDetailNode)
 
 adDetailNode.addEventListener('newevent', (event) => {
-    notificationController(adDetailNode,event.detail)
-    event.stopPropagation();
+    notificationController(adDetailNode, event.detail)
+    event.stopPropagation()
 })
 
 adDetailNode.addEventListener('spinnerOn', (event) => {
     showLoader()
-    event.stopPropagation();
+    event.stopPropagation()
 })
 adDetailNode.addEventListener('spinnerOff', (event) => {
     hideLoader()
-    event.stopPropagation();
+    event.stopPropagation()
 })
 
 detailController(adDetailNode)

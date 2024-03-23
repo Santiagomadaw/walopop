@@ -1,6 +1,6 @@
 import { buildLoader } from "./loader-view.js"
 
-export function loaderController(node){
+export function loaderController(node) {
     const spinner = document.createElement('div')
     spinner.classList = 'loaderContiner'
     const showLoader = () => {
@@ -8,11 +8,11 @@ export function loaderController(node){
         node.appendChild(spinner)
     }
     const hideLoader = () => {
-        spinner.remove();
+        spinner.remove()
     }
     return {
         showLoader,
         hideLoader
     }
-    
+
 }

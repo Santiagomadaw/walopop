@@ -1,9 +1,9 @@
-import { sendEvent } from "../utils/eventDispatcher.js";
-import { createUser } from "./signup-model.js";
+import { sendEvent } from "../utils/eventDispatcher.js"
+import { createUser } from "./signup-model.js"
 
 export function signupController(signupForm) {
     signupForm.addEventListener('submit', (event) => {
-        event.preventDefault();
+        event.preventDefault()
         const formData = dataExtract(signupForm)
         let errors = []
         !mailValidate(formData.email)
@@ -25,7 +25,7 @@ export function signupController(signupForm) {
 }
 async function newUser(data, node) {
     try {
-        sendEvent('spinnerOn',{},node)
+        sendEvent('spinnerOn', {}, node)
         await createUser(data)
         sendEvent('newevent',
             {
@@ -35,17 +35,17 @@ async function newUser(data, node) {
             node)
         setTimeout(() => {
             window.history.back()
-        }, 1200);
+        }, 1200)
     } catch (error) {
         sendEvent('newevent',
             {
-                
+
                 message: error.message,
                 type: 'error'
             },
             node)
     } finally {
-        sendEvent('spinnerOff',{},node)
+        sendEvent('spinnerOff', {}, node)
     }
 }
 const dataExtract = (signupForm) => {
@@ -56,7 +56,7 @@ const dataExtract = (signupForm) => {
 }
 
 const mailValidate = (email) => {
-    const emailRegExp = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
+    const emailRegExp = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)
     return emailRegExp.test(email)
 }
 

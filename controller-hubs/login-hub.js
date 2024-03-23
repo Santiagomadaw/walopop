@@ -1,22 +1,22 @@
-import { headerController } from "../mvc-header/header-controller.js";
-import { loginController } from "../mvc-login/login-controller.js";
-import { notificationController } from "../mvc-notificaions/notifications-controller.js";
+import { headerController } from "../mvc-header/header-controller.js"
+import { loginController } from "../mvc-login/login-controller.js"
+import { notificationController } from "../mvc-notificaions/notifications-controller.js"
 import { loaderController } from "../mvc-loader/loader-controller.js"
 
 const loginForm = document.querySelector('#login-form')
 const { showLoader, hideLoader } = loaderController(loginForm)
 
 loginForm.addEventListener('newevent', (event) => {
-    notificationController(loginForm,event.detail)
-    event.stopPropagation();
+    notificationController(loginForm, event.detail)
+    event.stopPropagation()
 })
 loginForm.addEventListener('spinnerOn', (event) => {
     showLoader()
-    event.stopPropagation();
+    event.stopPropagation()
 })
 loginForm.addEventListener('spinnerOff', (event) => {
     hideLoader()
-    event.stopPropagation();
+    event.stopPropagation()
 })
 loginController(loginForm)
 

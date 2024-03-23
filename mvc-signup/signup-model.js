@@ -8,19 +8,19 @@ export async function createUser(data) {
             headers: {
                 'Content-type': "application/json"
             }
-        });
-        if (!response.ok){
-            throw new Error ('Se ha producido un error creando en usuario')
+        })
+        if (!response.ok) {
+            throw new Error('Se ha producido un error creando en usuario')
         }
-        
+
     } catch (error) {
-            throw new Error (error.message)
-        
+        throw new Error(error.message)
+
     }
 }
 
-const parseUser = (data)=>{
-    return{
+const parseUser = (data) => {
+    return {
         username: data.email,
         password: data.pass
     }

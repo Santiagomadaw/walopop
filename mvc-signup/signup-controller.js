@@ -14,7 +14,7 @@ export function signupController(signupForm) {
             : ''
         errors.length > 0
             ? errors.forEach(error =>
-                sendEvent('formEvent',
+                sendEvent('newevent',
                     {
                         message: error,
                         type: 'error'
@@ -27,7 +27,7 @@ async function newUser(data, node) {
     try {
         sendEvent('spinnerOn',{},node)
         await createUser(data)
-        sendEvent('formEvent',
+        sendEvent('newevent',
             {
                 message: 'Usuario creado',
                 type: 'success'
@@ -37,7 +37,7 @@ async function newUser(data, node) {
             window.history.back()
         }, 1200);
     } catch (error) {
-        sendEvent('formEvent',
+        sendEvent('newevent',
             {
                 
                 message: error.message,

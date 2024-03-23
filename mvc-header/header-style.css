@@ -1,0 +1,70 @@
+
+.header{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    height: 10vh;
+    z-index: 2;
+    background: #ffffff;
+    border-bottom: grey solid 1px;
+    margin-bottom: 60px;
+    position: sticky;
+    top: 0;
+    padding: 10px 10%;
+    color: rgb(19,193,172);
+    & h1{
+        font-family: "Grandstander", cursive;
+        font-optical-sizing: auto;
+        font-weight: 900;
+        & span{
+            font-size: 40px;
+        }
+
+    }
+    & ul {
+        margin: 0;
+        padding: 0;
+    }
+    & li {
+        list-style-type: none;
+        min-width: fit-content;
+    }
+    
+}
+
+
+#search{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    width: 60%;
+    
+}
+#searchItem {
+    width: 60%;
+    height: 38px;
+    border: black solid 1px;
+    padding-left: 10px;
+    border-radius: 10px;
+}
+select{
+    width: 15%;
+    height: 38px;
+    border: black solid 1px;
+    padding-left: 10px;
+    border-radius: 10px;
+}
+#searchbutton{
+    width: 12%;
+
+}
+option{
+    text-align: center;
+    pad: 0;
+    margin: 0;
+}
+form > *{
+    min-width: fit-content;
+}

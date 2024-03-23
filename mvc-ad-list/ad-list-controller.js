@@ -1,19 +1,16 @@
-import { sendEvent } from "../utils/eventDispatcher.js";
+import { handelError, spinnerOff, spinnerOn } from "../utils/eventHandler.js";
 import { getAds } from "./ad-list-model.js";
 import { buildAd, buildNoAd } from "./ad-list-view.js";
 
 
 export async function adListController(adListContiner, page = 1) {
-    const params = window.location.href.split('?')
-
+    const params = window.location.href.split('?')[1]
     const adList =document.createElement('div')
     adList.classList = 'ad-list'
     adListContiner.appendChild(adList)
     try {
-        console.log('lanzo spinner')
-        sendEvent('spinnerOn',{},adListContiner)
-        
-        const ads = await getAds(page, params[1])
+        spinnerOn(adListContiner)
+        const ads = await getAds(page, params)
         if (ads.length > 0) {
             renderAds(ads, adList)
             if(ads.length >= 10){
@@ -21,9 +18,8 @@ export async function adListController(adListContiner, page = 1) {
             button.classList='more-ads-button'
             button.innerHTML='Mostrar mas anuncios'
             button.addEventListener('click', async ()=>{
-                page = page +1
-                const moreAds = await getAds(page, params[1])
-                console.log(moreAds)
+                page++
+                const moreAds = await getAds(page, params)
                 if (moreAds.length > 0){
                     renderAds(moreAds, adList)
                 }
@@ -37,18 +33,12 @@ export async function adListController(adListContiner, page = 1) {
             renderNoAds(adList)
         }
     } catch (error) {
-        sendEvent(' adLoaderError',
-                    {
-                        message:error,
-                        type:'error'
-                    }
-                    , adListContiner)
+        handelError(error.message,adListContiner)
         setTimeout(() => {
             renderNoAds(adList)
-        }, 4000);
+        }, 2000);
     }finally{
-        console.log('paro spinner')
-        sendEvent('spinnerOff',{},adListContiner)
+        spinnerOff(adListContiner)
     }
 }
 

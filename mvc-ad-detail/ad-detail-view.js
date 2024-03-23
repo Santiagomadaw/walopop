@@ -8,11 +8,36 @@ export function buildDetail(data){
 <h4>${data.buysell}</h4>
 <p>${data.description}</p>
 <button disabled id="removeAdButton">Borrar Anuncio</button>
+<button disabled id="editButton">Editar</button>
 <button id="backButton">Volver atrás</button>
 `
 }
 
 export function buildTags(tag){
-    console.log(tag)
     return `<h4>${tag}</h4>`
+}
+
+export function buildEditForm(data){
+    return`<form id="ad-form">
+    <label for="name">Articulo:</label>
+    <input type="text" value="${data.name}" name="name" id="name" required>
+    <label for="price">price:</label>
+    <input type="number" value="${data.price}" name="price" id="price" required>
+    <label for="photo">Url foto:</label>
+    <input type="text" value="${data.photo}" name="photo" id="photo">
+    <label for="tags">Etiquetas:</label>
+    <input type="tags" value="${data.tags.join(', ')}" name="tags" id="tags"required>
+    <label for="tags">Descripcion:</label>
+    <input type="text" value="${data.description}" name="description" id="description" required> 
+    <div class="switch-continer">
+        <h3>Venta</h3>
+        <label class="switch">
+            <input type="checkbox" checked="${(data.buysell==='Venta')}" name="buysell" id="buysell">
+            <span class="slider round"></span>
+        </label> 
+        <h3>Compra</h3>
+    </div>
+    <button type="submit" class="newAdButton">Enviar</button>
+    <button type="button" class="cancelButton">Cancelar</button>
+</form>`
 }

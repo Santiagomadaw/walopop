@@ -3,9 +3,9 @@ import { loaderController } from "../mvc-loader/loader-controller.js"
 import { newAdController } from "../mvc-newad/newad-controller.js"
 import { notificationController } from "../mvc-notificaions/notifications-controller.js"
 
-const newAdForm = document.querySelector('#new-ad-form')
+const newAdForm = document.querySelector('.new-ad-contianer')
 const { showLoader, hideLoader } = loaderController(newAdForm)
-newAdForm.addEventListener('formEvent', (event) => {
+newAdForm.addEventListener('newevent', (event) => {
     notificationController(newAdForm,event.detail)
     event.stopPropagation();
 })

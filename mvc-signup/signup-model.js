@@ -1,7 +1,8 @@
 export async function createUser(data) {
     try {
         const parsedUser = parseUser(data)
-        const response = await fetch('http://localhost:8000/auth/register', {
+        const url = 'http://localhost:8000/auth/register'
+        const response = await fetch(url, {
             method: "POST",
             body: JSON.stringify(parsedUser),
             headers: {

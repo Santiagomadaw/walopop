@@ -1,49 +1,27 @@
-import { sendEvent } from "../utils/eventDispatcher.js";
+import { handelError, handelSucces, spinnerOff, spinnerOn } from "../utils/eventHandler.js";
+import { extractFormValues, nomalizeFormValues } from "../utils/formUtils.js";
 import { createAd } from "./newad-model.js";
 
 export const newAdController = (newAdForm) => {
-    
     goBackButton(newAdForm)
-    
     newAdForm.addEventListener('submit', async (event) => {
         event.preventDefault();
-        const formData = new FormData (newAdForm)
-        let dataObj = {}
-        formData.forEach((value,key) => {
-            dataObj[key]=value
-        })
-        if (!dataObj['photo']){
-            dataObj['photo']='https://colegiocei.es/wp-content/uploads/2023/12/producto-sin-imagen.png'
-        }
-        if (!dataObj['buysell']){
-            dataObj['buysell']='Venta'
-        }else{
-            dataObj['buysell']='Compra'
-
-        }
+        let dataObj = extractFormValues(newAdForm)
+        nomalizeFormValues(dataObj)
+        console.log(dataObj)
+        
         try {
-            sendEvent('spinnerOn',{},newAdForm)
+            spinnerOn(newAdForm)
             const response = await createAd(dataObj)
             const data = await response.json()
-            sendEvent('formEvent',
-                        {
-                            message:'Anuncio creado',
-                            type:'success'
-                        },
-                        newAdForm)
-            
+            handelSucces('Anuncio creado',newAdForm)
             setTimeout(() => {
                 window.location = `ad-detail.html?id=${data.id}`;
             }, 1200)
         } catch (error) {
-            sendEvent('formEvent',
-                        {
-                            message:error.message,
-                            type:'error'
-                        },
-                        newAdForm)
+            handelError(error,newAdForm)
         }finally{
-            sendEvent('spinnerOff',{},newAdForm)
+            spinnerOff(newAdForm)
         }
     })
 }

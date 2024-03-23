@@ -5,17 +5,15 @@ import { loaderController } from "../mvc-loader/loader-controller.js"
 
 const adListContiner = document.querySelector('.adListContiner')
 const { showLoader, hideLoader } = loaderController(adListContiner)
-adListContiner.addEventListener('adLoaderError', (event) => {
+adListContiner.addEventListener('newevent', (event) => {
     notificationController(adListContiner,event.detail)
     event.stopPropagation();
 })
 adListContiner.addEventListener('spinnerOn', (event) => {
-    console.log('tengo lanzo spinner')
     showLoader()
     event.stopPropagation();
 })
 adListContiner.addEventListener('spinnerOff', (event) => {
-    console.log('tengo lanzo spinner')
     hideLoader()
     event.stopPropagation();
 })

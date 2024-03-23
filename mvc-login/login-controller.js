@@ -1,4 +1,4 @@
-import { sendEvent } from "../utils/eventDispatcher.js";
+import { handelError, handelSucces, spinnerOff, spinnerOn } from "../utils/eventHandler.js";
 import { loginUser } from "./login-model.js";
 
 export const loginController = (loginFormNode) => {
@@ -11,28 +11,17 @@ export const loginController = (loginFormNode) => {
 }
 const submitForm = async (data, node) => {
     try {
-        sendEvent('spinnerOn',{},node)
+        spinnerOn(node)
         const jsonWebTokken = await loginUser(data)
         localStorage.setItem('token', jsonWebTokken)
-        sendEvent('formEvent',
-            {
-                message: 'Login success',
-                type: 'success'
-            },
-            node)
-            
+        handelSucces('Login success',node)
             setTimeout(() => {
                 window.history.back()
             }, 1200);
     } catch (error) {
-        sendEvent('formEvent',
-            {
-                message: error,
-                type: 'error'
-            },
-            node)
+        handelError(error,node)
     } finally {
-        sendEvent('spinnerOff',{},node)
+        spinnerOff(node)
 
     }
 }

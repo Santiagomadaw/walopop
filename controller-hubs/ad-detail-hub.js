@@ -5,7 +5,7 @@ import { notificationController } from "../mvc-notificaions/notifications-contro
 const adDetailNode = document.querySelector('.ad-detail')
 const { showLoader, hideLoader } = loaderController(adDetailNode)
 
-adDetailNode.addEventListener('detailError', (event) => {
+adDetailNode.addEventListener('newevent', (event) => {
     notificationController(adDetailNode,event.detail)
     event.stopPropagation();
 })

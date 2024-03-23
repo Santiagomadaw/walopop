@@ -1,11 +1,10 @@
 .ad-list{
     margin: auto;
-    width: 80%;
+    width: 75%;
     display: grid;
-    
     justify-content: center;
     gap: 10px;
-    grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+    grid-template-columns: repeat(auto-fit, 235px);
 }
 .single-ad{
     display: flex;

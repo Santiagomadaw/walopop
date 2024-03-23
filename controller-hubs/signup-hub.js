@@ -6,7 +6,7 @@ import { loaderController } from "../mvc-loader/loader-controller.js"
 const signupForm = document.querySelector('#signup-form')
 const { showLoader, hideLoader } = loaderController(signupForm)
 
-signupForm.addEventListener('formEvent', (event) => {
+signupForm.addEventListener('newevent', (event) => {
     notificationController(signupForm,event.detail)
     event.stopPropagation();
 })

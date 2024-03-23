@@ -1,28 +1,45 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./mvc-ad-list/ad-list-style.css">
-    <link rel="stylesheet" href="./mvc-loader/loader-stylle.css">
+    <link rel="stylesheet" href="./mvc-loader/loader-style.css">
+    <link rel="stylesheet" href="./mvc-header/header-style.css">
     <link rel="stylesheet" href="./mvc-notificaions/notification-style.css">
     <link rel="stylesheet" href="./sytles/main.css">
     <link rel="stylesheet" href="./sytles/normalize.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Grandstander:ital@0;1&family=Lobster&family=Outfit:wght@100..900&family=Vina+Sans&display=swap" rel="stylesheet"><title>welepop</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Grandstander:ital@0;1&family=Lobster&family=Outfit:wght@100..900&family=Vina+Sans&display=swap"
+        rel="stylesheet">
+    <title>welepop</title>
 </head>
+
 <body>
-    <header class="header"> 
+    <header class="header">
         <a href="index.html">
             <h1><span>w</span>allopop</h1>
         </a>
         <form id="search">
-        <input type="text" placeholder="Buscar" name="search" id="searchItem">  
+            <input type="text" placeholder="Buscar" name="search" id="searchItem">
+            <select name="tags" id="tagsSelect">
+                <option value="" disabled selected>--Tags--</option>
+            </select>
+            <select name="buysell" id="buysell">
+                <option value="" disabled selected>--Option--</option>
+                <option value="Compra" id="Compra" >Compra</option>
+                <option value="Venta" id="Venta">Venta</option>
+            </select>
+            <button id="searchbutton">Buscar</button>
+
         </form>
         <nav class="navContainer"></nav>
     </header>
     <section class="adListContiner"></section>
     <script type="module" src="controller-hubs/index-hub.js"></script>
 </body>
+
 </html>

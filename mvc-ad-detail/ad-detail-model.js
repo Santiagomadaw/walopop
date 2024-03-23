@@ -20,18 +20,21 @@ export async function getAdDetail(adId) {
 }
 
 export async function getUser(token) {
-    const url = 'http://localhost:8000/auth/me'
-    try {
-        const response = await fetch(url, {
-            headers: {
-                'Authorization': `Bearer ${token}`
-            }
-        });
-        const data = await response.json();
-        const user = parseUser(data)
-        return user.userId
-    } catch (error) {
-        throw new Error('Error datos del usuario')
+    if(token){
+
+        const url = 'http://localhost:8000/auth/me'
+        try {
+            const response = await fetch(url, {
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            });
+            const data = await response.json();
+            const user = parseUser(data)
+            return user.userId
+        } catch (error) {
+            throw new Error('Error datos del usuario')
+        }
     }
 }
 
@@ -69,5 +72,42 @@ const parseAd = (data) =>{
 const parseUser = (data) => {
     return{
         userId: data.id
+    }
+}
+
+export async function editAd(id,data) {
+    const url = `http://localhost:8000/api/ads/${id}`
+    const token = localStorage.getItem('token')
+    const ads = parseEditorData(data)
+    let response
+    try {
+        response = await fetch(url, {
+            method: "PATCH",
+            body: JSON.stringify(ads),
+            headers: {
+                'Content-type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            }
+
+        })
+        if (!response.ok) {
+            const datares = await response.json()
+            throw new Error(datares.message);
+        }
+        return response
+    } catch (error) {
+        if (error.message) {
+            throw new Error ('No se pudo crear el anuncio')
+        }
+    }
+}
+function parseEditorData(data){
+    return {
+        name: data.name,
+        price: data.price,
+        photo: data.photo,
+        tags: data.tags.replace(/,/g, ' ').split(' ').filter(elemento => elemento.trim() !== ""),
+        buysell: data.buysell,
+        description: data.description
     }
 }

@@ -7,6 +7,6 @@ export function  notificationController(node, detail) {
     notificationContainer.classList.add('notification', detail.type)
     setTimeout(() => {
         notificationContainer.remove()
-    }, 4000);
+    }, 2000);
     
 }

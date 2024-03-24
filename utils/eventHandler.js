@@ -1,7 +1,6 @@
 import { sendEvent } from "../utils/eventDispatcher.js"
 
 export function handelError(error, node) {
-    console.log(error, node)
     sendEvent('newevent', { message: error, type: 'error' }, node)
 
 }

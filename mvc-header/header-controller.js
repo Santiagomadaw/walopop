@@ -26,7 +26,7 @@ export const headerController = async (header) => {
         window.location.href = url
     })
     if (isloggedUser()) {
-        loggedInConfig(navContainer, header)
+        loggedInConfig(navContainer)
     } else {
         loggedOutConfig(navContainer)
     }
@@ -97,7 +97,7 @@ function urlMaker(searchedItems) {
     return url
 }
 
-function loggedInConfig(navContainer, header) {
+function loggedInConfig(navContainer) {
     navContainer.innerHTML = buildLoginButtons()
     const logoutButton = navContainer.querySelector('#logout')
     const newAdButton = navContainer.querySelector('#newAd')

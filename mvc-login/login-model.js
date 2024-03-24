@@ -12,14 +12,16 @@ export const loginUser = async (dataForm) =>{
         })
         const dataResponse = await response.json()
         if (!response.ok){
+            
             throw new Error(dataResponse.message)
 
             }
         if(response.ok){
             return dataResponse.accessToken
+            
         }
     } catch (error) {
-        throw new Error ('Conection error')
+        throw error
         }
         
     }

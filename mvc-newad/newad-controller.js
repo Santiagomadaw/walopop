@@ -9,7 +9,6 @@ export const newAdController = (newAdForm) => {
         event.preventDefault()
         let dataObj = extractFormValues(newAdForm)
         nomalizeFormValues(dataObj)
-        console.log(dataObj)
 
         try {
             spinnerOn(newAdForm)

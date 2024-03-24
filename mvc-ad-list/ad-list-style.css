@@ -1,6 +1,7 @@
 .ad-list{
     margin: auto;
     width: 75%;
+    max-width: 1215px;
     display: grid;
     justify-content: center;
     gap: 10px;
@@ -61,4 +62,13 @@
 }
 p{
     margin: 0;
+}
+
+@media (width < 1280px) {
+    .ad-list{
+        width: 90%
+    }
+}
+@media (width < 640px) {
+    
 }

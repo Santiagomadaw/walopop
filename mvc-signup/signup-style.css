@@ -4,6 +4,7 @@
     flex-direction: column;
     height: 100%;
     width: 400px;
+    max-width: 95vw;
     & .signUpButton{
         margin-top: 1rem;
     }

@@ -4,9 +4,12 @@ body{
     background-color: #eceff1;
 
 }
-
-
 .ad-detail{
+    background-color: none;
+    
+}
+
+.ad-detail.visible{
     display: flex;
     flex-direction: column;
     width: 680px;

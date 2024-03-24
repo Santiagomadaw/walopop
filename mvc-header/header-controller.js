@@ -15,11 +15,10 @@ export const headerController = async (header) => {
         drawTags(tags, tagSelect)
     } catch (error) {
         handelError(error, header)
-
     }
 
     fillSeachForm(searchItem, tagSelect, optionSelect)
-
+    
     searchBar.addEventListener('submit', (event) => {
         event.preventDefault()
         const searchedItems = new FormData(searchBar)

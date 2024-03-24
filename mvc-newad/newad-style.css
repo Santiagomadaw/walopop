@@ -3,6 +3,8 @@
     gap: 5px;
     flex-direction: column;
     height: 100%;
+    
+    max-width: 95vw;
     width: 400px;
 
     & .signUpButton {

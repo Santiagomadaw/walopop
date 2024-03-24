@@ -2,6 +2,8 @@ export const buildLogoutButtons =() => {
     return `<ul>
                 <li>
                     <button id="login" >Login</button>
+                </li>
+                <li>
                     <button id= "signup" >Registrar</button>
                 </li>
             </ul>`

@@ -31,7 +31,8 @@
 }
 .more-ads-button {
     
-    width: 20%;
+    width: fit-content;
+    margin-bottom: 20px;
 }
 .no-ad{
     color: silver;

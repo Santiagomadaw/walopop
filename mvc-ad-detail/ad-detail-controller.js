@@ -56,6 +56,7 @@ async function handleEditButton(node, data) {
             if (!showedForm) {
                 editorFormContainer.innerHTML = buildEditForm(data);
                 cancelButton(node, editorFormContainer);
+                editorFormContainer.querySelector('#name').focus()
                 showedForm = !showedForm;
             } else {
                 editorFormContainer.innerHTML = "";

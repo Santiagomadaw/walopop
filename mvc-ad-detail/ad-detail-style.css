@@ -13,6 +13,7 @@ body{
     display: flex;
     flex-direction: column;
     width: 680px;
+    max-width: 90%;
     background-color: white;
     padding: 40px 10px;
     border-radius: 10px;
@@ -21,6 +22,7 @@ body{
     margin: 20px 10px;
     display: flex;
     width: 640px;
+    max-width: 96%;
     height: 480px;
     border-radius: 10px;
     align-items: center;
@@ -56,9 +58,9 @@ body{
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 100%;
+    height: 85%;
     left: 0;
-    top: 0;
+    bottom: 0;
     background: rgba(255, 255, 255, 0.541);
     backdrop-filter: blur(10px);
     position: absolute;
@@ -69,6 +71,7 @@ body{
     flex-direction: column;
     height: auto;
     width: 400px;
+    max-width: 90%;
 
     & .signUpButton {
         margin-top: 1rem;

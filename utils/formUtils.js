@@ -1,7 +1,7 @@
 
 export function nomalizeFormValues(dataObj){
     if (!dataObj['photo']) {
-        dataObj['photo'] = 'https://colegiocei.es/wp-content/uploads/2023/12/producto-sin-imagen.png'
+        dataObj['photo'] = './img/producto-sin-imagen.png'
     }
     if (!dataObj['buysell']) {
         dataObj['buysell'] = 'Venta'

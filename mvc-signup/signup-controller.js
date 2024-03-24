@@ -2,6 +2,7 @@ import { sendEvent } from "../utils/eventDispatcher.js"
 import { createUser } from "./signup-model.js"
 
 export function signupController(signupForm) {
+    signupForm.querySelector('#email').focus()
     signupForm.addEventListener('submit', (event) => {
         event.preventDefault()
         const formData = dataExtract(signupForm)

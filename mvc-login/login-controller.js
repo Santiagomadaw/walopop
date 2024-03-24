@@ -2,7 +2,7 @@ import { handelError, handelSucces, spinnerOff, spinnerOn } from "../utils/event
 import { loginUser } from "./login-model.js"
 
 export const loginController = (loginFormNode) => {
-
+    loginFormNode.querySelector('#email').focus()
     loginFormNode.addEventListener('submit', (event) => {
         event.preventDefault()
         const data = loginDataExtract(loginFormNode)

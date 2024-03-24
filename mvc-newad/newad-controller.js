@@ -3,6 +3,7 @@ import { extractFormValues, nomalizeFormValues } from "../utils/formUtils.js"
 import { createAd } from "./newad-model.js"
 
 export const newAdController = (newAdForm) => {
+    newAdForm.querySelector('#name').focus()
     goBackButton(newAdForm)
     newAdForm.addEventListener('submit', async (event) => {
         event.preventDefault()

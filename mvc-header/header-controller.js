@@ -18,7 +18,7 @@ export const headerController = async (header) => {
     }
 
     fillSeachForm(searchItem, tagSelect, optionSelect)
-    
+
     searchBar.addEventListener('submit', (event) => {
         event.preventDefault()
         const searchedItems = new FormData(searchBar)
@@ -106,7 +106,7 @@ function loggedInConfig(navContainer, header) {
     })
     logoutButton.addEventListener('click', () => {
         localStorage.removeItem('token')
-        headerController(header)
+        window.location.href = 'index.html'
     })
 }
 function loggedOutConfig(navContainer) {

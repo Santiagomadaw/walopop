@@ -7,9 +7,9 @@ export function buildDetail(data){
 <div class="tags-container"></div>
 <h4>${data.buysell}</h4>
 <p>${data.description}</p>
-<button disabled id="removeAdButton">Borrar Anuncio</button>
+<button disabled id="removeAdButton">Borrar</button>
 <button disabled id="editButton">Editar</button>
-<button id="backButton">Volver atrás</button>
+<button id="backButton">Volver</button>
 `
 }
 
